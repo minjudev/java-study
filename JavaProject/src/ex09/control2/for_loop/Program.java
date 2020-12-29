@@ -1,4 +1,4 @@
-package ex7.control2.for_loop;
+package ex09.control2.for_loop;
 
 import java.util.Scanner;
 
@@ -44,9 +44,25 @@ public class Program {
 			System.out.println("│      성적 출력     │");
 			System.out.println("└──────────────────┘");
 				
-			System.out.printf("\t국어1 : %3d\n", kor1);		
-			System.out.printf("\t국어2 : %3d\n", kor2);
-			System.out.printf("\t국어3 : %3d\n", kor3);
+			// i의 초기화 값은 0으로 고정하는 게 좋음
+			// i(index): 0~
+			// n(number): 1~
+			// for(int n=1; n<=3, n++)
+			for(int i=0; i<3; i++) {
+				System.out.printf("\t국어%d : %3d\n", i+1, kor1);		
+			}
+			
+			// 3, 2, 1을 출력하는 반복문 
+			// 내 코드
+//			for(int i=3; i>=1; i--) {
+//				System.out.printf("\t국어%d : %3d\n", i, kor1);		
+//			}
+			
+			// 수정한 코드
+//			for(int i=0; i<3; i++) {
+//				System.out.printf("\t국어%d : %3d\n", 3-i, kor1);
+//			}
+			
 			System.out.printf("\t총점 : %3d\n", total);
 			System.out.printf("\t평균 : %6.2f\n", avg);
 			System.out.println("────────────────────");

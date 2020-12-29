@@ -1,4 +1,4 @@
-package ex7.control2.dowhile;
+package ex08.control2.dowhile;
 
 import java.util.Scanner;
 
@@ -14,8 +14,8 @@ public class Program {
       kor2 = 0;
       kor3 = 0;
       
-      while(true) {
-         // -------------- 己 利 涝仿 何盒 ---------------
+      while(true) {    	  
+         // -------------- 己利 涝仿 何盒 ---------------
          System.out.println("ΓΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΔ");
          System.out.println("Β      己利 涝仿     Β");
          System.out.println("ΖΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΕ");

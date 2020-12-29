@@ -1,4 +1,4 @@
-package ex2.io.printstream;
+package ex02.io.printstream;
 public class Program {
 	public static void main(String[] args) {
 		int kor1, kor2, kor3;
