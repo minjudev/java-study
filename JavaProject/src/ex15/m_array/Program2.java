@@ -2,11 +2,12 @@ package ex15.m_array;
 
 import java.util.Scanner;
 
-public class Program {
+public class Program2 {
 	public static void main(String[] args) {
 
-		// int kor1, kor2, kor3;
-		int[] kors = new int[3 * 3];
+		//int kor1, kor2, kor3;
+		//int[] kors = new int[3*3];
+		int[][] kors = new int[3][3];
 		int[] total = new int[3];
 		float[] avg = new float[3];
 		int menu;
@@ -19,14 +20,15 @@ public class Program {
 
 		for (int j=0; j<3; j++) {
 			for (int i=0; i<3; i++) {
-				// 1차원이지만 개념상으로는 2차원으로 생각하고 다룰 수 있음
-				kors[3*j + i] = 0;
+				//1차원이지만 개념상으로는 2차원으로 생각하고 다룰 수 있음
+				//kors[3*j + i] = 0;
+				kors[j][i] = 0;
 			}
 		}
 
-		// "종료"라는 라벨 이용해서 while문에서 벗어나기
+		//"종료"라는 라벨 이용해서 while문에서 벗어나기
 		종료: while (true) {
-			// -------------- 메인 메뉴 부분 ---------------
+			//-------------- 메인 메뉴 부분 ---------------
 			System.out.println("┌──────────────────┐");
 			System.out.println("│      메인 메뉴      │");
 			System.out.println("└──────────────────┘");
@@ -40,7 +42,7 @@ public class Program {
 
 			case 1:
 
-				// -------------- 성적 입력 부분 ---------------
+				//-------------- 성적 입력 부분 ---------------
 				System.out.println("┌──────────────────┐");
 				System.out.println("│      성적 입력     │");
 				System.out.println("└──────────────────┘");
@@ -66,12 +68,12 @@ public class Program {
 					for (int i=0; i<3; i++) {
 						do {
 							System.out.printf("%d학년 국어%d: ", j+1, i+1);
-							kors[3*j + i] = scan.nextInt();
+							kors[j][i] = scan.nextInt();
 
-							if (kors[3*j + i] < 0 || 100 < kors[3*j + i]) {
+							if (kors[j][i] < 0 || 100 < kors[j][i]) {
 								System.out.println("성적 범위(0 ~ 100)를 벗어났습니다");
 							}
-						} while (kors[3*j + i] < 0 || 100 < kors[3*j + i]);
+						} while (kors[j][i] < 0 || 100 < kors[j][i]);
 					}
 				}
 
@@ -79,10 +81,10 @@ public class Program {
 
 			case 2:
 
-				// -------------- 성적 출력 부분 ---------------
+				//-------------- 성적 출력 부분 ---------------
 
-				// total = (kor1 + kor2 + kor3);
-				// total = kors[0] + kors[1] + kors[2];
+				//total = (kor1 + kor2 + kor3);
+				//total = kors[0] + kors[1] + kors[2];
 
 				System.out.println("┌──────────────────┐");
 				System.out.println("│      성적 출력      │");
@@ -92,9 +94,9 @@ public class Program {
 					System.out.printf("<%d학년 국어 성적>---------\n", j+1);
 					
 					for (int i=0; i<3; i++) {
-						System.out.printf("\t국어%d : %3d\n", i+1, kors[3*j + i]);
+						System.out.printf("\t국어%d : %3d\n", i+1, kors[j][i]);
 						
-						total[j] += kors[3*j + i]; 
+						total[j] += kors[j][i]; 
 					}
 					
 					avg[j] = total[j] / 3.0f;	   
@@ -104,15 +106,15 @@ public class Program {
 					System.out.println("────────────────────");
 				}
 
-				// switch문만 벗어나는 break
+				//switch문만 벗어나는 break
 				break;
 
 			case 3:
-				// switch문 안에서 break를 만나면 현재 코드 상 while문에서 벗어나지 못하고 switch문에서만 벗어남
-				// "종료"라는 라벨 이용해서 while문에서 벗어나기
+				//switch문 안에서 break를 만나면 현재 코드 상 while문에서 벗어나지 못하고 switch문에서만 벗어남
+				//"종료"라는 라벨 이용해서 while문에서 벗어나기
 				break 종료;
 
-			// switch문에서 default는 if else문의 else에 해당
+			//switch문에서 default는 if else문의 else에 해당
 			default:
 				System.out.println("입력 오류");
 
