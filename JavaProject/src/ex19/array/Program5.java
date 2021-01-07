@@ -14,8 +14,8 @@ public class Program5 {
 			lotto[i] = rand.nextInt(45) + 1;
 		
 		for(int i=0; i<6; i++)
-			System.out.printf("%d, ", lotto[i]);
-				
+			System.out.printf("%d ", lotto[i]);
+		 		
 	}
 
 }
