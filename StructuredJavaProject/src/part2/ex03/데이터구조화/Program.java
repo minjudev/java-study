@@ -7,7 +7,8 @@ public class Program {
 	public static void main(String[] args) {
 
 		Exam[] exams = new Exam[3];
-
+		int current = 0;
+		
 		int menu;
 		boolean keepLoop = true;
 
@@ -17,10 +18,10 @@ public class Program {
 
 			switch (menu) {
 			case 1:
-				inputList(exams);
+				inputList(exams, current);
 				break;
 			case 2:
-				printList(exams);
+				printList(exams, current);
 				break;
 			case 3:
 				System.out.println("Good bye :)");
@@ -51,7 +52,7 @@ public class Program {
 		return menu;
 	}
 
-	private static void inputList(Exam[] exams) {
+	private static void inputList(Exam[] exams, int current) {
 		Scanner scan = new Scanner(System.in);
 
 		System.out.println("┌───────────────────────────┐");
@@ -59,7 +60,7 @@ public class Program {
 		System.out.println("└───────────────────────────┘");
 		System.out.println();
 
-		for(int i=0; i<3; i++) {
+
 			
 			int kor, eng, math;
 	
@@ -95,17 +96,18 @@ public class Program {
 			exam.eng = eng;
 			exam.math = math;
 			
-			exams[i] = exam;
-		}
+			exams[current] = exam;
+			current++;
+		
 	}
 
-	private static void printList(Exam[] exams) {
+	private static void printList(Exam[] exams, int size) {
 			System.out.println("┌───────────────────────────┐");
 	        System.out.println("│           성적  출력         │");
 	        System.out.println("└───────────────────────────┘");
 	        System.out.println();
 			
-	        for(int i=0; i<3; i++) {
+	        for(int i=0; i<size; i++) {
 		        Exam exam = exams[i];
 		        // 변수 선언은 반복되지 않음
 		        int kor = exam.kor;
@@ -114,7 +116,7 @@ public class Program {
 		        
 		        int total = kor + eng + math;
 		        float avg = total / 3.0f;
-		    	
+		    
 		        System.out.printf("국어: %d\n", kor);	        	
 		        System.out.printf("영어: %d\n", eng);	        	
 		        System.out.printf("수학: %d\n", math);	        	
