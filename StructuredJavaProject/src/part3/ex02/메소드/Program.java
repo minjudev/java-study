@@ -7,7 +7,6 @@ public class Program {
 	public static void main(String[] args) {
 
 		ExamList list = new ExamList();
-		list.init();
 		//캡슐화를 깨는 코드이므로 ExamList.java에서 private 접근 제어 지시자를 통해 접근 막아줌
 		//list.current = 3;
 

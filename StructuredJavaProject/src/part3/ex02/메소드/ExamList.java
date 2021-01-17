@@ -103,7 +103,7 @@ public class ExamList {
 		}
 	}
 
-	public void init() {
+	public ExamList() {
 		//this¸¦ Áö¿öµµ ±¦ÂúÀ½
 		exams = new Exam[3];
 		current = 0;		
